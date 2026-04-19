@@ -143,7 +143,7 @@ SAP-BTP-Integration-Capstone/
 
 ---
 
-## 🚀 Setup & Deployment Steps
+##  Setup & Deployment Steps
 
 ### Prerequisites
 - SAP BTP Trial account (free at [sap.com/trial](https://www.sap.com/trial))
@@ -200,7 +200,7 @@ SAP-BTP-Integration-Capstone/
 
 ---
 
-## ⭐ Unique Points
+##  Unique Points
 
 - **Cloud-Native, Zero On-Premise** - Entire solution on SAP BTP Cloud Foundry; no local SAP install, instantly scalable, fully managed.
 - **Full Integration Stack** - Implements all enterprise layers in one iFlow: HTTPS trigger, Request-Reply fetch, Content Modifier + Groovy Script transformation, Exception Subprocess error handling.
@@ -210,7 +210,7 @@ SAP-BTP-Integration-Capstone/
 
 ---
 
-## 🔮 Future Improvements
+##  Future Improvements
 
 | # | Improvement | Description |
 |---|-------------|-------------|
@@ -224,7 +224,7 @@ SAP-BTP-Integration-Capstone/
 
 ---
 
-## 📄 Documentation
+##  Documentation
 
 Full project documentation PDF is included in this repository:
 📎 [`Aaron_Chakraborty_SAP_BTP_Capstone.pdf`](./Aaron_Chakraborty_SAP_BTP_Capstone.pdf)
