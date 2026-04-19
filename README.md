@@ -1,6 +1,6 @@
 # SAP BTP Integration Suite - Employee Data Integration
 
-**Capstone Project | SAP Industrial Elective – BTP Developer | KIIT University**
+**Capstone Project | SAP Industrial Elective - BTP Developer | KIIT University**
 
 ---
 
@@ -11,11 +11,11 @@
 | **Name** | Aaron Chakraborty |
 | **Roll Number** | 2305671 |
 | **Email** | 2305671@kiit.ac.in |
-| **Program** | SAP Industrial Elective – BTP Developer |
+| **Program** | SAP Industrial Elective - BTP Developer |
 | **University** | KIIT University, Bhubaneswar |
-| **Batch / Year** | 2025–26 |
+| **Batch / Year** | 2025-26 |
 | **Submitted** | April 2026 |
-| **Guided By** | ExcelR Edtech – SAP Trainer |
+| **Guided By** | ExcelR Edtech - SAP Trainer |
 
 ---
 
@@ -88,15 +88,15 @@ https://jsonplaceholder.typicode.com/users/1
 
 ## 🔄 End-to-End Flow
 
-**Step 1 – Trigger:** An HR system sends an HTTPS request to `/employeedata` on SAP BTP Cloud Foundry, simulating an H2R onboarding event.
+**Step 1 - Trigger:** An HR system sends an HTTPS request to `/employeedata` on SAP BTP Cloud Foundry, simulating an H2R onboarding event.
 
-**Step 2 – Fetch:** `Fetch_Employee_API` (Request Reply) calls JSONPlaceholder via HTTP Adapter; receives raw employee JSON with name, email, address, and company fields.
+**Step 2 - Fetch:** `Fetch_Employee_API` (Request Reply) calls JSONPlaceholder via HTTP Adapter; receives raw employee JSON with name, email, address, and company fields.
 
-**Step 3 – Transform:** Content Modifier 2 structures the payload. Groovy Script (`Transform_Employee`) extracts required fields and formats a clean, standardised JSON aligned to downstream expectations.
+**Step 3 - Transform:** Content Modifier 2 structures the payload. Groovy Script (`Transform_Employee`) extracts required fields and formats a clean, standardised JSON aligned to downstream expectations.
 
-**Step 4 – Response:** End Event returns the transformed, validated JSON to the calling system, completing the synchronous integration cycle.
+**Step 4 - Response:** End Event returns the transformed, validated JSON to the calling system, completing the synchronous integration cycle.
 
-**Step 5 – Error:** If any step fails, Exception Subprocess fires - Content Modifier returns:
+**Step 5 - Error:** If any step fails, Exception Subprocess fires - Content Modifier returns:
 ```json
 {
   "status": "ERROR",
@@ -231,4 +231,4 @@ Full project documentation PDF is included in this repository:
 
 ---
 
-*Submitted as part of KIIT University Capstone Project · ExcelR Edtech · SAP Industrial Elective – BTP Developer · April 2026*
+*Submitted as part of KIIT University Capstone Project · ExcelR Edtech · SAP Industrial Elective - BTP Developer · April 2026*
