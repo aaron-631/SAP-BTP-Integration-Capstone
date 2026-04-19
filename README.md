@@ -1,4 +1,4 @@
-# SAP BTP Integration Suite — Employee Data Integration
+# SAP BTP Integration Suite - Employee Data Integration
 
 **Capstone Project | SAP Industrial Elective – BTP Developer | KIIT University**
 
@@ -21,7 +21,7 @@
 
 ## 📋 Problem Statement
 
-In modern enterprises, HR systems must share employee data seamlessly across payroll engines, ERP platforms, and self-service portals. Manual transfers introduce inconsistencies, delays, and compliance risks. The **Hire-to-Retire (H2R)** process — spanning onboarding, role changes, transfers, and exit — demands real-time, automated synchronisation at every stage.
+In modern enterprises, HR systems must share employee data seamlessly across payroll engines, ERP platforms, and self-service portals. Manual transfers introduce inconsistencies, delays, and compliance risks. The **Hire-to-Retire (H2R)** process - spanning onboarding, role changes, transfers, and exit - demands real-time, automated synchronisation at every stage.
 
 Without robust integration middleware, organisations face data silos and operational bottlenecks that directly impact workforce management and downstream system accuracy.
 
@@ -31,7 +31,7 @@ Without robust integration middleware, organisations face data silos and operati
 
 This project implements a complete **end-to-end SAP BTP Integration Suite** scenario simulating an employee onboarding data flow from an HR source system to downstream enterprise platforms.
 
-The iFlow **`Employee_Data_Fetch`** exposes a secure HTTPS endpoint, fetches live employee data from an external REST API, applies field-level transformation via Content Modifier and Groovy Script, and returns a structured JSON payload — with a built-in Exception Subprocess handling failures gracefully.
+The iFlow **`Employee_Data_Fetch`** exposes a secure HTTPS endpoint, fetches live employee data from an external REST API, applies field-level transformation via Content Modifier and Groovy Script, and returns a structured JSON payload - with a built-in Exception Subprocess handling failures gracefully.
 
 The architecture mirrors real **SAP BTP → SuccessFactors** and **S/4HANA** enterprise integration patterns.
 
@@ -45,7 +45,7 @@ The architecture mirrors real **SAP BTP → SuccessFactors** and **S/4HANA** ent
 | **Real-time Data Fetch** | HTTP GET to JSONPlaceholder REST API returns live structured employee JSON payload |
 | **Data Transformation** | Content Modifier structures payload; Groovy Script extracts key fields into clean output JSON |
 | **Exception Handling** | Exception Subprocess returns structured error JSON with H2R-Onboarding process context on failure |
-| **Cloud-Native Deployment** | Runs entirely on SAP BTP Cloud Foundry — no on-premise infrastructure required |
+| **Cloud-Native Deployment** | Runs entirely on SAP BTP Cloud Foundry - no on-premise infrastructure required |
 | **Request-Reply Pattern** | Industry-standard synchronous SAP integration pattern with guaranteed API response |
 
 ---
@@ -81,7 +81,7 @@ The architecture mirrors real **SAP BTP → SuccessFactors** and **S/4HANA** ent
         |
         ↓
 https://jsonplaceholder.typicode.com/users/1
-[JSONPlaceholder REST API — Employee JSON Response]
+[JSONPlaceholder REST API - Employee JSON Response]
 ```
 
 ---
@@ -96,7 +96,7 @@ https://jsonplaceholder.typicode.com/users/1
 
 **Step 4 – Response:** End Event returns the transformed, validated JSON to the calling system, completing the synchronous integration cycle.
 
-**Step 5 – Error:** If any step fails, Exception Subprocess fires — Content Modifier returns:
+**Step 5 – Error:** If any step fails, Exception Subprocess fires - Content Modifier returns:
 ```json
 {
   "status": "ERROR",
@@ -112,14 +112,14 @@ https://jsonplaceholder.typicode.com/users/1
 
 | Technology | Version | Role in Project |
 |------------|---------|-----------------|
-| SAP BTP | Trial | Cloud platform — subaccounts, services, runtime |
-| SAP Integration Suite | Trial Plan | Integration middleware — iFlow design, deployment, runtime |
+| SAP BTP | Trial | Cloud platform - subaccounts, services, runtime |
+| SAP Integration Suite | Trial Plan | Integration middleware - iFlow design, deployment, runtime |
 | Cloud Integration | Trial Tenant | Design, configure, deploy, and monitor integration flows |
 | HTTPS Adapter | Built-in | Inbound HTTPS trigger endpoint |
 | HTTP Adapter | Built-in | Outbound HTTP GET to external REST API |
 | Content Modifier | Built-in | Structures and enriches the employee data payload mid-flow |
 | Groovy Script | Built-in | Field-level data extraction and clean JSON output formatting |
-| JSONPlaceholder API | Public REST | External employee data source — `GET /users/1` |
+| JSONPlaceholder API | Public REST | External employee data source - `GET /users/1` |
 | SAP BTP Cockpit | Web Console | Subaccount management, role assignment, service subscriptions |
 | SAP Business App Studio | Trial | Cloud IDE for BTP development and iFlow configuration |
 
@@ -150,22 +150,22 @@ SAP-BTP-Integration-Capstone/
 - Integration Suite subscribed with Cloud Integration capability activated
 - Role collections assigned: `Integration_Provisioner`, `PI_Administrator`, `PI_Integration_Developer`
 
-### Step 1 — Create Integration Package
+### Step 1 - Create Integration Package
 1. Open Integration Suite → Design → Integrations and APIs
 2. Click **Create** → Fill Name: `KIIT_BTP_Capstone`
 3. Click **Save**
 
-### Step 2 — Create iFlow
+### Step 2 - Create iFlow
 1. Inside the package → Click **Edit** → **Add** → **Integration Flow**
 2. Name: `Employee_Data_Fetch`
 3. Click **OK** to open the canvas
 
-### Step 3 — Configure HTTPS Sender
+### Step 3 - Configure HTTPS Sender
 1. Hover over Sender → drag arrow to Start → select **HTTPS** adapter
 2. Connection tab → Address: `/employeedata`
 3. Uncheck **CSRF Protected** → Save
 
-### Step 4 — Add Request Reply Step
+### Step 4 - Add Request Reply Step
 1. Search "Request Reply" in step search → place between Start and End
 2. Connect Request Reply → Receiver → select **HTTP** adapter
 3. Connection tab settings:
@@ -173,7 +173,7 @@ SAP-BTP-Integration-Capstone/
    - Method: `GET`
    - Authentication: `None`
 
-### Step 5 — Deploy
+### Step 5 - Deploy
 1. Click **Save** → Click **Deploy**
 2. Monitor → All Integration Flows → wait for status: `Started`
 
@@ -202,11 +202,11 @@ SAP-BTP-Integration-Capstone/
 
 ## ⭐ Unique Points
 
-- **Cloud-Native, Zero On-Premise** — Entire solution on SAP BTP Cloud Foundry; no local SAP install, instantly scalable, fully managed.
-- **Full Integration Stack** — Implements all enterprise layers in one iFlow: HTTPS trigger, Request-Reply fetch, Content Modifier + Groovy Script transformation, Exception Subprocess error handling.
-- **Built-in Resilience** — Structured error JSON with explicit H2R-Onboarding process context enables graceful downstream failure handling without manual intervention.
-- **Production-Ready Pattern** — Request-Reply + HTTPS/HTTP is the exact pattern used in live SAP BTP → S/4HANA and SuccessFactors production integrations.
-- **Extensible Without Redesign** — OAuth 2.0, S/4HANA OData, and audit logging can be added as independent modular components; no core iFlow changes needed.
+- **Cloud-Native, Zero On-Premise** - Entire solution on SAP BTP Cloud Foundry; no local SAP install, instantly scalable, fully managed.
+- **Full Integration Stack** - Implements all enterprise layers in one iFlow: HTTPS trigger, Request-Reply fetch, Content Modifier + Groovy Script transformation, Exception Subprocess error handling.
+- **Built-in Resilience** - Structured error JSON with explicit H2R-Onboarding process context enables graceful downstream failure handling without manual intervention.
+- **Production-Ready Pattern** - Request-Reply + HTTPS/HTTP is the exact pattern used in live SAP BTP → S/4HANA and SuccessFactors production integrations.
+- **Extensible Without Redesign** - OAuth 2.0, S/4HANA OData, and audit logging can be added as independent modular components; no core iFlow changes needed.
 
 ---
 
